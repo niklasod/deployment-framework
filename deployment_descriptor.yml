@@ -1,0 +1,13 @@
+deployments:
+  - pipeline:
+    name: my-pipeline
+    sourceStep:
+      source: codecommit
+    buildStep: 
+      build: codebuild
+    deployStep:
+      provider: cloudformation
+    
+    targets:
+      - name: test
+        path:
